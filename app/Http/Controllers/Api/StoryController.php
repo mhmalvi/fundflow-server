@@ -13,7 +13,7 @@ class StoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() ///get all stories from database
     {
         try {
             $story = Story::orderBy('id', 'desc')->get();
@@ -53,7 +53,7 @@ class StoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) ///store stories to database
     {
         try {
             if (isset($request->image)) {
@@ -93,7 +93,7 @@ class StoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id) ///show story from database by id
     {
         if ($id) {
             $story = Story::find($id);
@@ -135,7 +135,7 @@ class StoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) //update story by id
     {
         try {
             $update = Story::find($id);
@@ -175,7 +175,7 @@ class StoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id) //delete story from databse
     {
         try {
             $story = Story::find($id);

@@ -16,7 +16,7 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index()  //get all blogs
     {
         try {
             $blog = Blog::orderBy('id', 'desc')->get();
@@ -56,7 +56,7 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)  ///save blog to database
     {
         try {
             if (Auth::check() && Auth::user()->roles == 'admin') {
@@ -104,7 +104,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id)  ///show blog by id
     {
         if ($id) {
             $blog = Blog::find($id);
@@ -149,7 +149,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id)  ///update blog by id
     {
         try {
             $update = Blog::find($id);
@@ -190,7 +190,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id)  ///delete blog by id
     {
         try {
             $blog = Blog::find($id);

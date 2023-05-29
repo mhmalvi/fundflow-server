@@ -13,8 +13,8 @@ class OurInvestorController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    public function index()
+     */  
+    public function index()  ///get all investors from database
     {
         try {
             $our_investor = OurInvestor::orderBy('id', 'desc')->get();
@@ -35,7 +35,7 @@ class OurInvestorController extends Controller
         }
     }
 
-    public function investor_count()
+    public function investor_count()  ///get investor counts
     {
         $visitor_count = OurInvestor::all()->count();
         if ($visitor_count) {
@@ -63,7 +63,7 @@ class OurInvestorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)  ///save investor to database
     {
         try {
             if (isset($request->image)) {
@@ -99,7 +99,7 @@ class OurInvestorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id)  ///show investor by id
     {
         try {
             $our_investor = OurInvestor::find($id);
@@ -138,7 +138,7 @@ class OurInvestorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) ///update investor by id
     {
         try {
             $our_investor = OurInvestor::find($id);
@@ -181,7 +181,7 @@ class OurInvestorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id) ///delete investor
     {
         try {
             $our_investor = OurInvestor::find($id);

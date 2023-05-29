@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 
 class CampaignController extends Controller
 {
-    public function campaign_overview(Request $request)
+    public function campaign_overview(Request $request)  ///save campaign overview to database
     {
         try {
             if (isset($request->project_image)) {
@@ -56,7 +56,7 @@ class CampaignController extends Controller
         }
     }
 
-    public function campaign_about(Request $request)
+    public function campaign_about(Request $request)  ///save campaign about to database
     {
         // dd($request->all());
         try {
@@ -83,7 +83,7 @@ class CampaignController extends Controller
         }
     }
 
-    public function campaign_update(Request $request)
+    public function campaign_update(Request $request)  ///save campaign update to database
     {
         // dd($request->all());
         try {
@@ -108,7 +108,7 @@ class CampaignController extends Controller
         }
     }
 
-    public function campaign_reward(Request $request)
+    public function campaign_reward(Request $request) ///save campaign rewards to database
     {
         try {
             $save = CampaignReward::create([
@@ -135,7 +135,7 @@ class CampaignController extends Controller
         }
     }
 
-    public function faq(Request $request){
+    public function faq(Request $request){  ////save campaign faq to databasew
         try {
             $save = Faq::create([
                 'question' => $request->question,

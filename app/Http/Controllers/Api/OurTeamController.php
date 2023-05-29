@@ -50,7 +50,7 @@ class OurTeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)  ///save team member to database
     {
         try {
             if (isset($request->image)) {
@@ -87,7 +87,7 @@ class OurTeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id) ///show investor by id from database
     {
         try {
             $our_team = OurTeam::find($id);
@@ -126,7 +126,7 @@ class OurTeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) ///update investor by id
     {
         try {
             if (isset($request->image)) {
@@ -163,7 +163,7 @@ class OurTeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id) ///delete investor by id
     {
         try {
             $our_team = OurTeam::find($id);

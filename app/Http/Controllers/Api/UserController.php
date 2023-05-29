@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function user_register(Request $request)
+    public function user_register(Request $request) ///user register
     {
         try {
             $user = User::create([
@@ -35,7 +35,7 @@ class UserController extends Controller
         }
     }
 
-    public function login(Request $request)
+    public function login(Request $request) ///login user
     {
         $request->validate([
             'email' => 'required|email',
@@ -56,7 +56,7 @@ class UserController extends Controller
         }
     }
 
-    public function logout(Request $request)
+    public function logout(Request $request) ///logout user
     {
         $logout = auth('sanctum')->user()->tokens()->delete();
         if ($logout == 1) {

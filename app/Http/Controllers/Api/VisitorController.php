@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 
 class VisitorController extends Controller
 {
-    public function monthly_blog_reader()
+    public function monthly_blog_reader() ///get monthly blog reader count
     {
         try {
             $curr_month = date('m');

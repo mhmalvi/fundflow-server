@@ -13,7 +13,7 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //get all articles
     {
         try {
             $article = Article::orderBy('id', 'desc')->get();
@@ -53,7 +53,7 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)  ///save article to database
     {
         try {
             try {
@@ -97,7 +97,7 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id)  ///show article by id
     {
         if ($id) {
             $article = Article::find($id);
@@ -139,7 +139,7 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id)  //update article by id
     {
         try {
             $article = Article::find($id);
@@ -179,7 +179,7 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id)   ///delete article by id
     {
         try {
             $article = Article::find($id);
