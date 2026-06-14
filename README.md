@@ -1,6 +1,8 @@
 <!-- repo-card -->
 ![fundflow-server](docs/assets/social-card.png)
 
+![fundflow-server — architecture](docs/assets/architecture.png)
+
 # FundFlow Server
 
 The backend API for FundFlow, a crowdfunding platform that enables users to create, manage, and contribute to fundraising campaigns. Built with Laravel 8 and designed to work alongside the FundFlow Client frontend application.
